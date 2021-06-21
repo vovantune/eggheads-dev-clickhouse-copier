@@ -18,6 +18,7 @@
   необходимо скачать и распаковать файлы с официального сайта, т.к. они содержат необходимый файл _zkCli.sh_
 - Создаём файл _config/config.php_ по подобию _config/config.php.example_.
 - Создаём файл _config/zookeeper.xml_ по подобию _config/zookeeper.xml.example_.
+- В корне проекта выполняем `composer install`.
 
 ## Запуск
 
