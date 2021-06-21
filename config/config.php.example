@@ -1,31 +1,31 @@
 <?php
 declare(strict_types=1);
 return [
-    'maxWorkers' => 4,
+    'maxWorkers' => 4, // see https://clickhouse.tech/docs/ru/operations/utilities/clickhouse-copier/
     'zkCliPath' => '/var/www/zookeeper/bin/zkCli.sh',
-    'zkDir' => '/clickhouse-dev',
+    'zkDir' => '/clickhouse-dev', // root Zookeeper path
     'chCopierPath' => 'clickhouse-copier', // path to 'clickhouse-copier' file
     'servers' => [
         [
             'release' => [
-                'host' => 'rc1a-s0fd8yu6ybfftmez.mdb.yandexcloud.net',
-                'port' => '8443',
-                'username' => 'wb_metrics',
+                'host' => 'RELEASE_HOST',
+                'port' => '8443', // if required
+                'username' => 'USER',
                 'password' => 'PWD',
-                'database' => 'wb_metrics',
-                'https' => true,
-                'sslCA' => __DIR__ . '/CA.pem',
+                'database' => 'RELEASE_DB',
+                'https' => true, // if required
+                'sslCA' => __DIR__ . '/CA.pem', // if required
             ],
             'dev' => [
-                'host' => 'rc1a-ujaad5s8holb97hl.mdb.yandexcloud.net',
-                'port' => '8443',
-                'username' => 'wb_metrics',
-                'password' => 'PWD',
-                'database' => 'wb_analytics',
-                'https' => true,
-                'sslCA' => __DIR__ . '/CA.pem',
+                'host' => 'DEV_HOST',
+                'port' => '8443', // if required
+                'username' => 'DEV_USER',
+                'password' => 'DEV_PWD',
+                'database' => 'DEV_DB',
+                'https' => true, // if required
+                'sslCA' => __DIR__ . '/CA.pem', // if required
             ],
-            'monthDepths' => 2,
+            'monthDepths' => 2, // how much partitions to copy
         ]
     ],
 ];
