@@ -1,4 +1,5 @@
-/config/app.php
+/.idea
+/config/config.php
 /config/CA.pem
 /config/zookeeper.xml
 /composer.phar
