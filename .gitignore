@@ -1,7 +1,10 @@
-/.idea
 /config/config.php
 /config/CA.pem
 /config/zookeeper.xml
+/config/zookeeper-preprocessed.xml
+/config/.._config_zookeeper-preprocessed.xml
 /composer.phar
+/.idea
+/tmp
 /vendor
 
