@@ -1,0 +1,31 @@
+<?php
+declare(strict_types=1);
+return [
+    'maxWorkers' => 4,
+    'zkCliPath' => '/var/www/zookeeper/bin/zkCli.sh',
+    'zkDir' => '/clickhouse-dev',
+    'chCopierPath' => 'clickhouse-copier', // path to 'clickhouse-copier' file
+    'servers' => [
+        [
+            'release' => [
+                'host' => 'rc1a-s0fd8yu6ybfftmez.mdb.yandexcloud.net',
+                'port' => '8443',
+                'username' => 'wb_metrics',
+                'password' => 'PWD',
+                'database' => 'wb_metrics',
+                'https' => true,
+                'sslCA' => __DIR__ . '/CA.pem',
+            ],
+            'dev' => [
+                'host' => 'rc1a-ujaad5s8holb97hl.mdb.yandexcloud.net',
+                'port' => '8443',
+                'username' => 'wb_metrics',
+                'password' => 'PWD',
+                'database' => 'wb_analytics',
+                'https' => true,
+                'sslCA' => __DIR__ . '/CA.pem',
+            ],
+            'monthDepths' => 2,
+        ]
+    ],
+];

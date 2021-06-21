@@ -1,0 +1,14 @@
+<yandex>
+    <logger>
+        <level>trace</level>
+        <size>100M</size>
+        <count>3</count>
+    </logger>
+
+    <zookeeper>
+        <node index="1">
+            <host>localhost</host>
+            <port>2181</port>
+        </node>
+    </zookeeper>
+</yandex>

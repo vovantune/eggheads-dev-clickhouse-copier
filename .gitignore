@@ -1,0 +1,6 @@
+/config/app.php
+/config/CA.pem
+/config/zookeeper.xml
+/composer.phar
+/vendor
+

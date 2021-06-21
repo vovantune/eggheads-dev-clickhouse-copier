@@ -1,0 +1,46 @@
+{
+  "name": "eggheads/dev-clickhouse-copier",
+  "description": "Dev ClickHouse from release storage maker",
+  "homepage": "https://eggheads.solutions",
+  "type": "project",
+  "license": "MIT",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git://github.com/vovantune/eggheads-code-style"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "smi2/phpclickhouse": "^1.4",
+    "symfony/config": "^5.3",
+    "ext-simplexml": "*"
+  },
+  "require-dev": {
+    "ext-xdebug": "*",
+    "setasign/phpcs-teamcity-report": "^1.0",
+    "eggheads/eggheads-code-style": "^1",
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "App\\Test\\": "tests/"
+    }
+  },
+  "scripts": {
+    "check": [
+      "@cs-check",
+      "@phpmd-check",
+      "@test"
+    ],
+    "cs-check": "phpcs --colors -p src/ tests/",
+    "cs-fix": "phpcbf --colors -p src/ tests/",
+    "test": "phpunit --colors=always --bootstrap=tests/bootstrap.php tests",
+    "phpmd-check": "vendor/bin/phpmd src/,tests/ text phpmd-ruleset.xml"
+  }
+}
