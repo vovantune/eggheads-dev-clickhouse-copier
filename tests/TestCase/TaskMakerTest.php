@@ -8,7 +8,11 @@ use App\Test\TestCase;
 
 class TaskMakerTest extends TestCase
 {
-    /** Формирование XML задач */
+    /**
+     * Формирование XML задач
+     *
+     * @return void
+     */
     public function testMake()
     {
         $maker = new TaskMaker();

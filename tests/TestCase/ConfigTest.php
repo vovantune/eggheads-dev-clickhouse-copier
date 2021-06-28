@@ -10,6 +10,8 @@ class ConfigTest extends TestCase
 {
     /**
      * Базовый тест конфигурации
+     *
+     * @return void
      */
     public function test()
     {

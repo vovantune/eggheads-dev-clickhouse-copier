@@ -23,7 +23,7 @@ class Config
      *
      * @var ?array
      */
-    private ?array $_config;
+    private ?array $_config; // @phpstan-ignore-line
 
     /**
      * Возвращает объект-одиночку
@@ -33,6 +33,7 @@ class Config
     public static function getInstance(): Config
     {
         if (empty(static::$_instance)) {
+            /**  @phpstan-ignore-next-line */
             static::$_instance = new static();
         }
 
@@ -60,6 +61,7 @@ class Config
      * @return array
      * @throws InvalidConfigurationException
      * @SuppressWarnings(PHPMD.MethodArgs)
+     * @phpstan-ignore-next-line
      */
     public function getServers(): array
     {

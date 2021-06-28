@@ -9,6 +9,7 @@ class Log
      * Вывод на экран
      *
      * @param string $message
+     * @return void
      */
     public static function debug(string $message)
     {

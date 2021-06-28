@@ -49,12 +49,13 @@ class ClickHouseCopier
      * Запускаем задачу для clickhouse-copier
      *
      * @param string $zkTaskPath
+     * @return void
      * @throws Exception
      */
     public function runTask(string $zkTaskPath)
     {
         $execString = $this->_copierPath . ' --config ' . $this->_zkConfigFile . ' --task-path ' . $zkTaskPath . ' --base-dir ' . $this->_baseDir;
-        if (exec($execString) === false) {
+        if (exec($execString) === false) { // @phpstan-ignore-line
             throw new Exception("Bad execution result for $execString");
         }
     }

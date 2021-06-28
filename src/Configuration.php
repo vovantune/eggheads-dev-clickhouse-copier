@@ -19,6 +19,7 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder('config');
         $rootNode = $treeBuilder->getRootNode();
+        /** @phpstan-ignore-next-line */
         $rootNode->children()
             ->integerNode('maxWorkers')->defaultValue(4)->min(1)->max(10)->info('How many simultaneously active workers are possible. If you run more workers superfluous workers will sleep.')->end()
             ->scalarNode('zkCliPath')->isRequired()->info('Path to the zkCli.sh command')->end()
@@ -47,6 +48,7 @@ class Configuration implements ConfigurationInterface
     private function _addConnectionNode(string $connectionType)
     {
         $treeBuilder = new TreeBuilder($connectionType);
+        /** @phpstan-ignore-next-line */
         return $treeBuilder->getRootNode()
             ->isRequired()
             ->info($connectionType === 'dev' ? 'Destination server' : 'Source server')

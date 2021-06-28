@@ -13,6 +13,7 @@ class Runner
     /**
      * Запуск процесса копирования
      *
+     * @return void
      * @throws NoDataException
      * @throws Exception
      */
@@ -34,6 +35,7 @@ class Runner
      *
      * @param int $taskIndex
      * @param string $taskContents
+     * @return void
      * @throws Exception
      */
     private static function _runTask(int $taskIndex, string $taskContents)

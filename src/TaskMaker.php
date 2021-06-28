@@ -37,6 +37,7 @@ class TaskMaker
      * @return string
      * @SuppressWarnings(PHPMD.MethodArgs)
      * @throws NoDataException
+     * @phpstan-ignore-next-line
      */
     private function _makeServerString(array $serverConfig): string
     {
@@ -69,7 +70,7 @@ class TaskMaker
      *
      * @param Client $releaseClickHouse
      * @param Client $devClickHouse
-     * @param array<int, array{cluster_pull: string, database_pull: string, table_pull: string, cluster_push: string, database_push: string, table_push: string, engine: string, sharding_key: string, enabled_partitions, ?string[]}> $importTables
+     * @param array<int, array{cluster_pull: string, database_pull: string, table_pull: string, cluster_push: string, database_push: string, table_push: string, engine: string, sharding_key: string, enabled_partitions: ?string[]}> $importTables
      * @return string
      */
     private function _makeImportTask(Client $releaseClickHouse, Client $devClickHouse, array $importTables): string
@@ -123,7 +124,7 @@ class TaskMaker
     /**
      * Формируем XML строку для импортируемых таблиц
      *
-     * @param array<int, array{cluster_pull: string, database_pull: string, table_pull: string, cluster_push: string, database_push: string, table_push: string, engine: string, sharding_key: string, enabled_partitions, ?string[]}> $importTables
+     * @param array<int, array{cluster_pull: string, database_pull: string, table_pull: string, cluster_push: string, database_push: string, table_push: string, engine: string, sharding_key: string, enabled_partitions: ?string[]}> $importTables
      * @return string
      */
     private function _makeImportTablesXml(array $importTables): string
@@ -163,7 +164,7 @@ class TaskMaker
      * @param Client $devClickHouse
      * @param string $tableName
      * @param string[] $importPartitions
-     * @return array{cluster_pull: string, database_pull: string, table_pull: string, cluster_push: string, database_push: string, table_push: string, engine: string, sharding_key: string, enabled_partitions, ?string[]}
+     * @return array{}|array{cluster_pull: string, database_pull: string, table_pull: string, cluster_push: string, database_push: string, table_push: string, engine: string, sharding_key: string, enabled_partitions: ?string[]}
      */
     private function _makeTableConfig(Client $releaseClickHouse, Client $devClickHouse, string $tableName, array $importPartitions): array
     {
@@ -265,6 +266,7 @@ class TaskMaker
      * @param array $serverConfig
      * @return string[]
      * @SuppressWarnings(PHPMD.MethodArgs)
+     * @phpstan-ignore-next-line
      */
     private function _getWorkPartitions(array $serverConfig): array
     {

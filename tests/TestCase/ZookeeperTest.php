@@ -9,7 +9,11 @@ use App\Zookeeper;
 
 class ZookeeperTest extends TestCase
 {
-    /** Тест отправки команд в Zookeeper */
+    /**
+     * Тест отправки команд в Zookeeper
+     *
+     * @return void
+     */
     public function test()
     {
         $zoo = new Zookeeper(Config::getInstance()->getZkCliPath(), APP . '/config/zookeeper.xml');

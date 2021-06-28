@@ -49,6 +49,7 @@ class Zookeeper
      * Инициализация сервера
      *
      * @param string $configFile
+     * @return void
      */
     private function _initServer(string $configFile)
     {

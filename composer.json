@@ -36,11 +36,13 @@
     "check": [
       "@cs-check",
       "@phpmd-check",
+      "@phpstan-check",
       "@test"
     ],
     "cs-check": "phpcs --colors -p src/ tests/",
     "cs-fix": "phpcbf --colors -p src/ tests/",
     "test": "phpunit --colors=always --bootstrap=tests/bootstrap.php tests",
-    "phpmd-check": "vendor/bin/phpmd src/,tests/ text phpmd-ruleset.xml"
+    "phpmd-check": "vendor/bin/phpmd src/,tests/ text phpmd-ruleset.xml",
+    "phpstan-check": "vendor/bin/phpstan --configuration=phpstan.neon"
   }
 }
