@@ -28,7 +28,7 @@ class Configuration implements ConfigurationInterface
             ->arrayNode('servers')
             ->arrayPrototype()
             ->children()
-            ->integerNode('monthDepths')->defaultValue(2)->info('Maximum month depth for tables with "Ym" partitions')->min(1)->max(12)->end()
+            ->integerNode('monthDepths')->defaultValue(2)->info('Maximum month depth for tables with "Ym" partitions')->min(1)->max(36)->end()
             ->append($this->_addConnectionNode('release'))
             ->append($this->_addConnectionNode('dev'))
             ->end()
